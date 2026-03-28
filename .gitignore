@@ -1,0 +1,16 @@
+.venv/
+env/
+venv/
+
+__pycache__/
+*.py[cod]
+
+*.log
+
+.vscode/
+*.idea/
+*.sublime-project
+*.sublime-workspace
+
+.DS_Store
+Thumbs.db
