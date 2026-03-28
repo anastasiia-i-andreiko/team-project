@@ -1,13 +1,13 @@
-contacts = []
+contacts = {}
 
 while True:
-    print("\nВаріанти: add / show / exit")
+    print("\nВаріанти: add / show / delete / exit")
     choice = input("Виберіть дію: ").lower()
 
     if choice == "add":
         name = input("Введіть ім'я: ")
         number = input("Введіть номер: ")
-        contacts.append(f"{name} - {number}")
+        contacts[name] = number
         print("Контакт додано")
 
     elif choice == "show":
@@ -15,8 +15,16 @@ while True:
             print("Список контактів порожній")
         else:
             print("\nКонтакти:")
-            for c in contacts:
-                print(c)
+            for name, number in contacts.items():
+                print(f"{name} - {number}")
+
+    elif choice == "delete":
+        name = input("Введіть ім'я для видалення: ")
+        if name in contacts:
+            del contacts[name]
+            print(f"{name} видалено")
+        else:
+            print("Контакт не знайдено")
 
     elif choice == "exit":
         print("До зустрічі")
